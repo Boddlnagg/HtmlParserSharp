@@ -38,6 +38,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using HtmlParserSharp.Common;
+using System.Xml;
 
 namespace HtmlParserSharp.Core
 {
@@ -319,7 +320,7 @@ namespace HtmlParserSharp.Core
 			// [NOCPP[
 			html4 = false;
 			idLocations.Clear();
-			wantingComments = WantsComments; // ??
+			wantingComments = false;
 			// ]NOCPP]
 			Start(fragment);
 			charBufferLen = 0;
@@ -5752,7 +5753,7 @@ namespace HtmlParserSharp.Core
 		/// <returns>
 		/// Whether this handler wants comments
 		/// </returns>
-		public bool WantsComments
+		bool ITokenHandler.WantsComments
 		{
 			get
 			{
@@ -5760,9 +5761,16 @@ namespace HtmlParserSharp.Core
 			}
 		}
 
-		public void SetIgnoringComments(bool ignoreComments)
+		public bool IsIgnoringComments
 		{
-			wantingComments = !ignoreComments;
+			get
+			{
+				return !wantingComments;
+			}
+			set
+			{
+				wantingComments = !value;
+			}
 		}
 
 		/**
