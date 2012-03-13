@@ -21,7 +21,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public class TaintableLocator : Locator
 	{

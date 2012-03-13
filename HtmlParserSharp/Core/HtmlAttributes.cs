@@ -26,7 +26,7 @@ using System;
 using System.Diagnostics;
 using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// Be careful with this class. QName is the name in from HTML tokenization.

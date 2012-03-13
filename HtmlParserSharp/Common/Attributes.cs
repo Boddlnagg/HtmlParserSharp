@@ -1,6 +1,4 @@
 ﻿/*
- * Copyright (c) 2007 Henri Sivonen
- * Copyright (c) 2011 Mozilla Foundation
  * Copyright (c) 2012 Patrick Reisert
  *
  * Permission is hereby granted, free of charge, to any person obtaining a 
@@ -22,18 +20,19 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-namespace HtmlParserSharp
+using System;
+
+namespace HtmlParserSharp.Common
 {
-	public class Locator : ILocator
-	{
-		public int ColumnNumber { get; private set; }
+	// This file contains the attributes that correspond to the annotations
+	// @NsUri, @Prefix and @Local in the Java code. Probably we can safely remove these.
 
-		public int LineNumber { get; private set; }
+	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+	public class NsUriAttribute : Attribute	{ }
 
-		public Locator(ILocator locator)
-		{
-			ColumnNumber = locator.ColumnNumber;
-			LineNumber = locator.LineNumber;
-		}
-	}
+	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+	public class PrefixAttribute : Attribute { }
+
+	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
+	public class LocalAttribute : Attribute { }
 }

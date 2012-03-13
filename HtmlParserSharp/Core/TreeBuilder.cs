@@ -39,7 +39,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public abstract class TreeBuilder<T> : ITokenHandler, ITreeBuilderState<T> where T : class
 	{

@@ -1,5 +1,7 @@
 ﻿/*
  * Copyright (c) 2012 Patrick Reisert
+ * Copyright (c) 2005, 2006, 2007 Henri Sivonen
+ * Copyright (c) 2007-2008 Mozilla Foundation
  *
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
@@ -23,12 +25,14 @@
 using System;
 using System.IO;
 using System.Xml;
+using HtmlParserSharp.Core;
 
 namespace HtmlParserSharp
 {
 	/// <summary>
 	/// This is a simple API for the parsing process.
-	/// It currently ignores the encoding in the html source and parses everything as UTF-8.
+	/// Part of this is a port of the nu.validator.htmlparser.io.Driver class.
+	/// The parser currently ignores the encoding in the html source and parses everything as UTF-8.
 	/// </summary>
 	public class SimpleHtmlParser
 	{

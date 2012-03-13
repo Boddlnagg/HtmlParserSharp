@@ -28,6 +28,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using HtmlParserSharp.Common;
+using HtmlParserSharp.Core;
 
 namespace HtmlParserSharp
 {

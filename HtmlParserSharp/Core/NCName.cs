@@ -24,7 +24,7 @@
 using System;
 using System.Text;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public sealed class NCName
 	{

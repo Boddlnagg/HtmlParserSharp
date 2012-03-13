@@ -22,6 +22,8 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+using HtmlParserSharp.Core;
+
 namespace HtmlParserSharp.Common
 {
 	/// <summary>

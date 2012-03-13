@@ -1,4 +1,6 @@
 ﻿/*
+ * Copyright (c) 2007 Henri Sivonen
+ * Copyright (c) 2011 Mozilla Foundation
  * Copyright (c) 2012 Patrick Reisert
  *
  * Permission is hereby granted, free of charge, to any person obtaining a 
@@ -20,15 +22,18 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
-	/// <summary>
-	/// Interface for getting the current line and column.
-	/// This is implemented by Locator and Tokenizer.
-	/// </summary>
-	public interface ILocator
+	public class Locator : ILocator
 	{
-		int LineNumber { get; }
-		int ColumnNumber { get; }
+		public int ColumnNumber { get; private set; }
+
+		public int LineNumber { get; private set; }
+
+		public Locator(ILocator locator)
+		{
+			ColumnNumber = locator.ColumnNumber;
+			LineNumber = locator.LineNumber;
+		}
 	}
 }

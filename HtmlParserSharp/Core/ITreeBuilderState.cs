@@ -21,7 +21,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// Interface for exposing the state of the HTML5 tree builder so that the

@@ -21,9 +21,14 @@
  */
 
 using System;
+using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
+	/// <summary>
+	/// Class for C++ portability.
+	/// TODO: Remove this
+	/// </summary>
 	public sealed class Portability
 	{
 		// Allocating methods

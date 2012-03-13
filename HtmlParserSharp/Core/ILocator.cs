@@ -20,19 +20,16 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-using System;
-
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
-	// This file contains the attributes that correspond to the annotations
-	// @NsUri, @Prefix and @Local in the Java code. Probably we can safely remove these.
-
-	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
-	public class NsUriAttribute : Attribute	{ }
-
-	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
-	public class PrefixAttribute : Attribute { }
-
-	[AttributeUsage(AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.Method)]
-	public class LocalAttribute : Attribute { }
+	/// <summary>
+	/// Interface for getting the current line and column
+	/// (Corresponds to the SAX Locator interface).
+	/// This is implemented by Locator and Tokenizer.
+	/// </summary>
+	public interface ILocator
+	{
+		int LineNumber { get; }
+		int ColumnNumber { get; }
+	}
 }

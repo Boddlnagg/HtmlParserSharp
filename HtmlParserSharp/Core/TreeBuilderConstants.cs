@@ -34,7 +34,9 @@
  * create derivative works of this document."
  */
 
-namespace HtmlParserSharp
+using HtmlParserSharp.Common;
+
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// Moved the constants (and pseude-enums) out of the TreeBuilder class.

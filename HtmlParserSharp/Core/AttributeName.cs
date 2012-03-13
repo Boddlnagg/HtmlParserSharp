@@ -22,8 +22,9 @@
  */
 
 using System;
+using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public sealed partial class AttributeName
 	{

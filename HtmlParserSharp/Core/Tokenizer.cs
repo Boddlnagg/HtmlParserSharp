@@ -38,7 +38,7 @@ using System;
 using System.Diagnostics;
 using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// An implementation of

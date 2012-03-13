@@ -1,5 +1,6 @@
 ﻿/*
  * Copyright (c) 2008-2010 Mozilla Foundation
+ * Copyright (c) 2012 Patrick Reisert 
  *
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
@@ -20,7 +21,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// An UTF-16 buffer that knows the start and end indeces of its unconsumed

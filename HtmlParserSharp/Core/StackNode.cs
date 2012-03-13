@@ -24,8 +24,9 @@
 
 using System;
 using System.Diagnostics;
+using HtmlParserSharp.Common;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public sealed class StackNode<T>
 	{

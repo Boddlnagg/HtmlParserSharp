@@ -43,36 +43,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributeName.cs" />
-    <Compile Include="CoalescingTreeBuilder.cs" />
+    <Compile Include="Core\AttributeName.cs" />
+    <Compile Include="Core\CoalescingTreeBuilder.cs" />
     <Compile Include="Common\DoctypeExpectation.cs" />
     <Compile Include="Common\DocumentMode.cs" />
     <Compile Include="Common\DocumentModeEventArgs.cs" />
     <Compile Include="Common\EncodingDetectedEventArgs.cs" />
     <Compile Include="Common\XmlViolationPolicy.cs" />
-    <Compile Include="DomTreeBuilder.cs" />
-    <Compile Include="ElementName.cs" />
-    <Compile Include="HtmlAttributes.cs" />
+    <Compile Include="Core\DomTreeBuilder.cs" />
+    <Compile Include="Core\ElementName.cs" />
+    <Compile Include="Core\HtmlAttributes.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ILocator.cs" />
+    <Compile Include="Core\ILocator.cs" />
     <Compile Include="Common\ITokenHandler.cs" />
-    <Compile Include="ITreeBuilderState.cs" />
-    <Compile Include="Locator.cs" />
-    <Compile Include="NamedCharacterAccel.cs" />
-    <Compile Include="NamedCharacters.cs" />
-    <Compile Include="NCName.cs" />
-    <Compile Include="Attributes.cs" />
+    <Compile Include="Core\ITreeBuilderState.cs" />
+    <Compile Include="Core\Locator.cs" />
+    <Compile Include="Core\NamedCharacterAccel.cs" />
+    <Compile Include="Core\NamedCharacters.cs" />
+    <Compile Include="Core\NCName.cs" />
+    <Compile Include="Common\Attributes.cs" />
     <Compile Include="Common\ParserErrorEventArgs.cs" />
-    <Compile Include="Portability.cs" />
+    <Compile Include="Core\Portability.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleHtmlParser.cs" />
-    <Compile Include="StackNode.cs" />
-    <Compile Include="StateSnapshot.cs" />
-    <Compile Include="TaintableLocator.cs" />
-    <Compile Include="Tokenizer.cs" />
-    <Compile Include="TreeBuilder.cs" />
-    <Compile Include="TreeBuilderConstants.cs" />
-    <Compile Include="UTF16Buffer.cs" />
+    <Compile Include="Core\StackNode.cs" />
+    <Compile Include="Core\StateSnapshot.cs" />
+    <Compile Include="Core\TaintableLocator.cs" />
+    <Compile Include="Core\Tokenizer.cs" />
+    <Compile Include="Core\TreeBuilder.cs" />
+    <Compile Include="Core\TreeBuilderConstants.cs" />
+    <Compile Include="Core\UTF16Buffer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

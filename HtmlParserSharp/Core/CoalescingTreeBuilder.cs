@@ -23,7 +23,7 @@
 
 using System;
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	/// <summary>
 	/// A common superclass for tree builders that coalesce their text nodes.

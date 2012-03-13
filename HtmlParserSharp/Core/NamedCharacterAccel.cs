@@ -6,7 +6,7 @@
  * this document.
  */
 
-namespace HtmlParserSharp
+namespace HtmlParserSharp.Core
 {
 	public sealed class NamedCharactersAccel
 	{
