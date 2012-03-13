@@ -1347,17 +1347,6 @@ namespace HtmlParserSharp.Core
 			return lastCR;
 		}
 
-		/// <summary>
-		/// States the loop.
-		/// </summary>
-		/// <param name="state">The state.</param>
-		/// <param name="c">The c.</param>
-		/// <param name="pos">The pos.</param>
-		/// <param name="buf">The buf.</param>
-		/// <param name="reconsume">if set to <c>true</c> [reconsume].</param>
-		/// <param name="returnState">State of the return.</param>
-		/// <param name="endPos">The end pos.</param>
-		/// <returns></returns>
 		private int StateLoop(int state, char c,
 				int pos, char[] buf, bool reconsume, int returnState,
 				int endPos)
@@ -1430,6 +1419,14 @@ namespace HtmlParserSharp.Core
 			 * method must return. The IO driver will then swallow the next
 			 * character if it is an LF to coalesce CRLF.
 			 */
+
+			/*
+			 * As there is no support for labeled loops in C#, instead of break <loop>;
+			 * the port uses goto break<loop>; and a label after the loop.
+			 * Instead of continue <loop>; it uses goto continue<loop>; and a label
+			 * at the beginning or end of the loop (which doesn't matter in for(;;) loops)
+			 */
+
 			/*stateloop:*/
 			for (; ; )
 			{

@@ -13,4 +13,6 @@ What's missing
 If you want to contribute, maybe you can start here:
 
 * Support for character encodings other than UTF-8
+* More C#-ish coding style (some methods are still lower-case ...)
 * Unit tests
+* Look for TODOs in the code
