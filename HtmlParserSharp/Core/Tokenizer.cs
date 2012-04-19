@@ -1202,8 +1202,11 @@ namespace HtmlParserSharp.Core
 					}
 					else
 					{
-						Err("Attribute value omitted for a non-bool attribute. (HTML4-only error.)");
-						attributes.AddAttribute(attributeName, "", xmlnsPolicy);
+						if (AttributeName.BORDER != attributeName)
+						{
+							Err("Attribute value omitted for a non-bool attribute. (HTML4-only error.)");
+							attributes.AddAttribute(attributeName, "", xmlnsPolicy);
+						}
 					}
 				}
 				else

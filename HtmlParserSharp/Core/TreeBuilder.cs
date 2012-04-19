@@ -793,7 +793,7 @@ namespace HtmlParserSharp.Core
 										 * Reconstruct the active formatting
 										 * elements, if any.
 										 */
-										if (!IsInForeign)
+										if (!IsInForeignButNotHtmlIntegrationPoint)
 										{
 											FlushCharacters();
 											ReconstructTheActiveFormattingElements();
@@ -1000,7 +1000,7 @@ namespace HtmlParserSharp.Core
 										 * Reconstruct the active formatting
 										 * elements, if any.
 										 */
-										if (!IsInForeign)
+										if (!IsInForeignButNotHtmlIntegrationPoint)
 										{
 											FlushCharacters();
 											ReconstructTheActiveFormattingElements();
@@ -1141,11 +1141,11 @@ namespace HtmlParserSharp.Core
 				{
 					return;
 				}
-				if (stackNode.ns == "http://www.w3.org/1998/Math/MathML"
-						&& stackNode.Group == DispatchGroup.MI_MO_MN_MS_MTEXT)
-				{
-					return;
-				}
+				//if (stackNode.ns == "http://www.w3.org/1998/Math/MathML"
+				//        && stackNode.Group == DispatchGroup.MI_MO_MN_MS_MTEXT)
+				//{
+				//    return;
+				//}
 				AccumulateCharacters(TreeBuilderConstants.REPLACEMENT_CHARACTER, 0, 1);
 			}
 		}
@@ -5178,10 +5178,10 @@ namespace HtmlParserSharp.Core
 								case XmlViolationPolicy.AlterInfoset:
 								// fall through
 								case XmlViolationPolicy.Allow:
-									Warn("Attribute \u201Cxmlns:xlink\u201D with the value \u201Chttp://www.w3org/1999/xlink\u201D is not serializable as XML 1.0 without changing document semantics.");
+									Warn("Attribute \u201Cxmlns:xlink\u201D with a value other than \u201Chttp://www.w3.org/1999/xlink\u201D is not serializable as XML 1.0 without changing document semantics.");
 									break;
 								case XmlViolationPolicy.Fatal:
-									Fatal("Attribute \u201Cxmlns:xlink\u201D with the value \u201Chttp://www.w3org/1999/xlink\u201D is not serializable as XML 1.0 without changing document semantics.");
+									Fatal("Attribute \u201Cxmlns:xlink\u201D with a value other than \u201Chttp://www.w3.org/1999/xlink\u201D is not serializable as XML 1.0 without changing document semantics.");
 									break;
 							}
 						}
@@ -5796,6 +5796,16 @@ namespace HtmlParserSharp.Core
 			get
 			{
 				return currentPtr >= 0 && stack[currentPtr].ns != "http://www.w3.org/1999/xhtml";
+			}
+		}
+
+		private bool IsInForeignButNotHtmlIntegrationPoint
+		{
+			get
+			{
+				return currentPtr >= 0
+					&& stack[currentPtr].ns != "http://www.w3.org/1999/xhtml"
+					&& !stack[currentPtr].IsHtmlIntegrationPoint;
 			}
 		}
 
