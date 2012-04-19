@@ -449,7 +449,7 @@ namespace HtmlParserSharp.Core
 					|| (c >= '\u309D' && c <= '\u309E') || (c >= '\u30FC' && c <= '\u30FE'));
 		}
 
-		public static bool IsNCName(String str)
+		public static bool IsNCName(string str)
 		{
 			if (str == null)
 			{

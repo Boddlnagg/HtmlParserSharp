@@ -63,13 +63,13 @@ namespace HtmlParserSharp.Core
 		/// Gets the mode.
 		/// </summary>
 		/// <returns>The mode.</returns>
-		int Mode { get; }
+		InsertionMode Mode { get; }
 
 		/// <summary>
 		/// Gets the original mode.
 		/// </summary>
 		/// <returns>The original mode.</returns>
-		int OriginalMode { get; }
+		InsertionMode OriginalMode { get; }
 
 		/// <summary>
 		/// Determines whether the frameset is OK.

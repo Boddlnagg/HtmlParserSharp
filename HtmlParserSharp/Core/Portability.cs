@@ -43,46 +43,9 @@ namespace HtmlParserSharp.Core
 			return string.Intern(new String(buf, offset, length));
 		}
 
-		public static String NewStringFromBuffer(char[] buf, int offset, int length)
-		{
-			return new String(buf, offset, length);
-		}
-
-		public static String NewEmptyString()
-		{
-			return "";
-		}
-
-		public static String NewStringFromLiteral(string literal)
-		{
-			return literal;
-		}
-
-		public static String NewStringFromString(string str)
-		{
-			return str;
-		}
-
-		// XXX get rid of this
-		public static char[] NewCharArrayFromLocal([Local] string local)
-		{
-			return local.ToCharArray();
-		}
-
-		public static char[] NewCharArrayFromString(string str)
-		{
-			return str.ToCharArray();
-		}
-
-		[Local]
-		public static string NewLocalFromLocal([Local] String local)
-		{
-			return local;
-		}
-
 		// Comparison methods
 
-		public static bool LocalEqualsBuffer([Local] String local, char[] buf, int offset, int length)
+		public static bool LocalEqualsBuffer([Local] string local, char[] buf, int offset, int length)
 		{
 			if (local.Length != length)
 			{
@@ -98,8 +61,7 @@ namespace HtmlParserSharp.Core
 			return true;
 		}
 
-		public static bool LowerCaseLiteralIsPrefixOfIgnoreAsciiCaseString(string lowerCaseLiteral,
-				String str)
+		public static bool LowerCaseLiteralIsPrefixOfIgnoreAsciiCaseString(string lowerCaseLiteral,	string str)
 		{
 			if (str == null)
 			{
@@ -149,16 +111,6 @@ namespace HtmlParserSharp.Core
 				}
 			}
 			return true;
-		}
-
-		public static bool LiteralEqualsString(string literal, string str)
-		{
-			return literal.Equals(str);
-		}
-
-		public static bool StringEqualsString(string one, string other)
-		{
-			return one.Equals(other);
 		}
 	}
 }

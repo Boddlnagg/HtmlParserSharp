@@ -6,13 +6,13 @@ This is a manual C# port of the [Validator.nu HTML Parser](http://about.validato
 Status
 ------
 
-Currently the port seems to work (as far as I have tested it), but as there are no unit tests, I'm not sure how well it really works. Tests showed that it is quite fast (about 3-6 times slower than parsing XML using .NET's XDocument API, but I think XML parsing is easier to implement, so this is okay).
+Currently the port is based on Validator.nu 1.3.1 and works, as far as I have tested it. However as there are no unit tests, I'm not sure if every detail is working correctly. Tests showed that it is quite fast (about 3-6 times slower than parsing XML using .NET's XDocument API, but I think XML parsing is easier to implement, so this is okay and it's still FAST).
 
 What's missing
 --------------
 If you want to contribute, maybe you can start here:
 
 * Support for character encodings other than UTF-8
-* More C#-ish coding style (some methods are still lower-case ...)
+* More C#-ish coding style
 * Unit tests
 * Look for TODOs in the code

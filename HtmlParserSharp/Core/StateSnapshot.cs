@@ -44,12 +44,12 @@ namespace HtmlParserSharp.Core
 		/// <summary>
 		/// Gets the mode.
 		/// </summary>
-		public int Mode { get; private set; }
+		public InsertionMode Mode { get; private set; }
 
 		/// <summary>
 		/// Gets the original mode.
 		/// </summary>
-		public int OriginalMode { get; private set; }
+		public InsertionMode OriginalMode { get; private set; }
 
 		/// <summary>
 		/// Gets a value indicating whether this instance is frameset ok.
@@ -80,8 +80,8 @@ namespace HtmlParserSharp.Core
 				T formPointer,
 				T headPointer,
 				T deepTreeSurrogateParent,
-				int mode,
-				int originalMode,
+				InsertionMode mode,
+				InsertionMode originalMode,
 				bool framesetOk,
 				bool needToDropLF,
 				bool quirks)

@@ -30,8 +30,7 @@ namespace HtmlParserSharp.Core
 	/// </summary>
 	public abstract class CoalescingTreeBuilder<T> : TreeBuilder<T> where T : class
 	{
-
-		protected void accumulateCharacters(char[] buf, int start, int length)
+		protected override void AccumulateCharacters(char[] buf, int start, int length)
 		{
 			int newLen = charBufferLen + length;
 			if (newLen > charBuffer.Length)

@@ -52,48 +52,72 @@ namespace HtmlParserSharp.Core
 
 		private readonly TaintableLocator locator;
 
-		public TaintableLocator getLocator()
+		public TaintableLocator Locator
 		{
-			return locator;
+			get
+			{
+				return locator;
+			}
 		}
 
 		// ]NOCPP]
 
-		public int GetFlags()
+		public int Flags
 		{
-			return flags;
+			get
+			{
+				return flags;
+			}
 		}
 
-		public int GetGroup()
+		public DispatchGroup Group
 		{
-			return flags & ElementName.GROUP_MASK;
+			get
+			{
+				return (DispatchGroup)(flags & ElementName.GROUP_MASK);
+			}
 		}
 
-		public bool IsScoping()
+		public bool IsScoping
 		{
-			return (flags & ElementName.SCOPING) != 0;
+			get
+			{
+				return (flags & ElementName.SCOPING) != 0;
+			}
 		}
 
-		public bool IsSpecial()
+		public bool IsSpecial
 		{
-			return (flags & ElementName.SPECIAL) != 0;
+			get
+			{
+				return (flags & ElementName.SPECIAL) != 0;
+			}
 		}
 
-		public bool IsFosterParenting()
+		public bool IsFosterParenting
 		{
-			return (flags & ElementName.FOSTER_PARENTING) != 0;
+			get
+			{
+				return (flags & ElementName.FOSTER_PARENTING) != 0;
+			}
 		}
 
-		public bool IsHtmlIntegrationPoint()
+		public bool IsHtmlIntegrationPoint
 		{
-			return (flags & ElementName.HTML_INTEGRATION_POINT) != 0;
+			get
+			{
+				return (flags & ElementName.HTML_INTEGRATION_POINT) != 0;
+			}
 		}
 
 		// [NOCPP[
 
-		public bool IsOptionalEndTag()
+		public bool IsOptionalEndTag
 		{
-			return (flags & ElementName.OPTIONAL_END_TAG) != 0;
+			get
+			{
+				return (flags & ElementName.OPTIONAL_END_TAG) != 0;
+			}
 		}
 
 		// ]NOCPP]

@@ -43,7 +43,7 @@ namespace HtmlParserSharp
 		private XmlDocument document;
 
 		override protected void AddAttributesToElement(XmlElement element, HtmlAttributes attributes) {
-			for (int i = 0; i < attributes.GetLength(); i++) {
+			for (int i = 0; i < attributes.Length; i++) {
 				String localName = attributes.GetLocalName(i);
 				String uri = attributes.GetURI(i);
 				if (!element.HasAttribute(localName, uri)) {
@@ -98,7 +98,7 @@ namespace HtmlParserSharp
 		override protected XmlElement CreateElement(string ns, string name, HtmlAttributes attributes)
 		{
 			XmlElement rv = document.CreateElement(name, ns);
-			for (int i = 0; i < attributes.GetLength(); i++)
+			for (int i = 0; i < attributes.Length; i++)
 			{
 				rv.SetAttribute(attributes.GetLocalName(i), attributes.GetURI(i), attributes.GetValue(i));
 				if (attributes.GetType(i) == "ID")
@@ -112,7 +112,7 @@ namespace HtmlParserSharp
 		override protected XmlElement CreateHtmlElementSetAsRoot(HtmlAttributes attributes)
 		{
 			XmlElement rv = document.CreateElement("html", "http://www.w3.org/1999/xhtml");
-			for (int i = 0; i < attributes.GetLength(); i++) {
+			for (int i = 0; i < attributes.Length; i++) {
 				rv.SetAttribute(attributes.GetLocalName(i), attributes.GetURI(i), attributes.GetValue(i));
 			}
 			document.AppendChild(rv);
@@ -140,7 +140,7 @@ namespace HtmlParserSharp
 			// TODO: fragment?
 		}
 
-		protected override void documentMode(DocumentMode mode, String publicIdentifier,
+		protected override void ReceiveDocumentMode(DocumentMode mode, String publicIdentifier,
 				String systemIdentifier, bool html4SpecificAdditionalErrorChecks)
 				{
 			//document.setUserData("nu.validator.document-mode", mode, null); // TODO
@@ -150,10 +150,12 @@ namespace HtmlParserSharp
 		/// Returns the document.
 		/// </summary>
 		/// <returns>The document</returns>
-		internal XmlDocument getDocument() {
-			XmlDocument rv = document;
-			document = null;
-			return rv;
+		internal XmlDocument Document
+		{
+			get
+			{
+				return document;
+			}
 		}
 
 		/// <summary>

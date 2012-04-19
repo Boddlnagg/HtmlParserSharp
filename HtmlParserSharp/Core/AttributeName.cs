@@ -269,7 +269,6 @@ namespace HtmlParserSharp.Core
 		/// <param name="offset">ignored</param>
 		/// <param name="length">Length of data</param>
 		/// <param name="checkNcName">Whether to check ncnameness</param>
-		/// <param name="interner">?</param>
 		/// <returns>An <code>AttributeName</code> corresponding to the argument data</returns>
 		internal static AttributeName NameByBuffer(char[] buf, int offset, int length
 			// [NOCPP[

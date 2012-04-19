@@ -61,7 +61,7 @@ namespace HtmlParserSharp
 		{
 			Reset();
 			Tokenize(reader);
-			return treeBuilder.getDocument();
+			return treeBuilder.Document;
 		}
 
 		public XmlDocumentFragment ParseFragment(TextReader reader, string fragmentContext)
@@ -97,7 +97,7 @@ namespace HtmlParserSharp
 				throw new ArgumentNullException("reader was null.");
 			}
 
-			tokenizer.start();
+			tokenizer.Start();
 			bool swallowBom = true;
 
 			try
@@ -131,7 +131,7 @@ namespace HtmlParserSharp
 							lastWasCR = false;
 							if (bufr.HasMore)
 							{
-								lastWasCR = tokenizer.tokenizeBuffer(bufr);
+								lastWasCR = tokenizer.TokenizeBuffer(bufr);
 							}
 						}
 					}
@@ -147,7 +147,7 @@ namespace HtmlParserSharp
 							lastWasCR = false;
 							if (bufr.HasMore)
 							{
-								lastWasCR = tokenizer.tokenizeBuffer(bufr);
+								lastWasCR = tokenizer.TokenizeBuffer(bufr);
 							}
 						}
 						streamOffset += len;

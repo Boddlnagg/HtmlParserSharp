@@ -32,7 +32,7 @@ namespace HtmlParserSharp.Core
 	/// Be careful with this class. QName is the name in from HTML tokenization.
 	/// Otherwise, please refer to the interface doc.
 	/// </summary>
-	public sealed class HtmlAttributes /* : Sax.IAttributes*/ {
+	public sealed class HtmlAttributes : IEquatable<HtmlAttributes> /* : Sax.IAttributes*/ {
 
 		// [NOCPP[
 
@@ -198,9 +198,12 @@ namespace HtmlParserSharp.Core
 
 		// ]NOCPP]
 
-		public int GetLength()
+		public int Length
 		{
-			return length;
+			get
+			{
+				return length;
+			}
 		}
 
 		[Local]
@@ -312,14 +315,20 @@ namespace HtmlParserSharp.Core
 
 		// [NOCPP[
 
-		public string GetId()
+		public string Id
 		{
-			return idValue;
+			get
+			{
+				return idValue;
+			}
 		}
 
-		public int GetXmlnsLength()
+		public int XmlnsLength
 		{
-			return xmlnsLength;
+			get
+			{
+				return xmlnsLength;
+			}
 		}
 
 		[Local]
@@ -528,7 +537,7 @@ namespace HtmlParserSharp.Core
 			HtmlAttributes clone = new HtmlAttributes(0);
 			for (int i = 0; i < length; i++)
 			{
-				clone.AddAttribute(names[i].CloneAttributeName(/*interner*/), Portability.NewStringFromString(values[i])
+				clone.AddAttribute(names[i].CloneAttributeName(/*interner*/), values[i]
 					// [NOCPP[
 					   , XmlViolationPolicy.Allow
 					// ]NOCPP]
@@ -544,10 +553,10 @@ namespace HtmlParserSharp.Core
 			return clone; // XXX!!!
 		}
 
-		public bool equalsAnother(HtmlAttributes other)
+		public bool Equals(HtmlAttributes other)
 		{
 			Debug.Assert(mode == 0 || mode == 3, "Trying to compare attributes in foreign content.");
-			int otherLength = other.GetLength();
+			int otherLength = other.Length;
 			if (length != otherLength)
 			{
 				return false;
@@ -565,7 +574,7 @@ namespace HtmlParserSharp.Core
 					if (ownLocal == other.names[j].GetLocal(AttributeName.HTML))
 					{
 						found = true;
-						if (!Portability.StringEqualsString(values[i], other.values[j]))
+						if (values[i] != other.values[j])
 						{
 							return false;
 						}
@@ -610,7 +619,7 @@ namespace HtmlParserSharp.Core
 
 		public void Merge(HtmlAttributes attributes)
 		{
-			int len = attributes.GetLength();
+			int len = attributes.Length;
 			for (int i = 0; i < len; i++)
 			{
 				AttributeName name = attributes.GetAttributeName(i);

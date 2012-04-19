@@ -44,15 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\AttributeName.cs" />
+    <Compile Include="Core\CharsetState.cs" />
     <Compile Include="Core\CoalescingTreeBuilder.cs" />
     <Compile Include="Common\DoctypeExpectation.cs" />
     <Compile Include="Common\DocumentMode.cs" />
     <Compile Include="Common\DocumentModeEventArgs.cs" />
     <Compile Include="Common\EncodingDetectedEventArgs.cs" />
     <Compile Include="Common\XmlViolationPolicy.cs" />
+    <Compile Include="Core\DispatchGroup.cs" />
     <Compile Include="Core\DomTreeBuilder.cs" />
     <Compile Include="Core\ElementName.cs" />
     <Compile Include="Core\HtmlAttributes.cs" />
+    <Compile Include="Core\InsertionMode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Core\ILocator.cs" />
     <Compile Include="Common\ITokenHandler.cs" />
