@@ -435,6 +435,7 @@ namespace HtmlParserSharp.Core
 		}
 
 		/// <summary>
+		/// TODO: remove this (?)
 		/// Clones the attribute using an interner. Returns 
 		/// <code>this</code> in Java and for non-dynamic instances in C++.
 		/// </summary>
@@ -477,9 +478,12 @@ namespace HtmlParserSharp.Core
 		/// <returns>
 		///   <c>true</c> if this is an <code>xmlns</code> attribute; otherwise, <c>false</c>.
 		/// </returns>
-		public bool IsXmlns()
+		public bool IsXmlns
 		{
-			return (flags & IS_XMLNS) != 0;
+			get
+			{
+				return (flags & IS_XMLNS) != 0;
+			}
 		}
 
 		/// <summary>
@@ -489,14 +493,20 @@ namespace HtmlParserSharp.Core
 		/// <returns>
 		///   <c>true</c> if the value is case-folded; otherwise, <c>false</c>.
 		/// </returns>
-		internal bool IsCaseFolded()
+		internal bool IsCaseFolded
 		{
-			return (flags & CASE_FOLDED) != 0;
+			get
+			{
+				return (flags & CASE_FOLDED) != 0;
+			}
 		}
 
-		internal bool IsBoolean()
+		internal bool IsBoolean
 		{
-			return (flags & BOOLEAN) != 0;
+			get
+			{
+				return (flags & BOOLEAN) != 0;
+			}
 		}
 
 		public string GetQName(int mode)

@@ -1187,7 +1187,7 @@ namespace HtmlParserSharp.Core
 				// [NOCPP[
 				if (html4)
 				{
-					if (attributeName.IsBoolean())
+					if (attributeName.IsBoolean)
 					{
 						if (html4ModeCompatibleWithXhtml1Schemata)
 						{
@@ -1248,7 +1248,7 @@ namespace HtmlParserSharp.Core
 				// HtmlAttributes
 				// [NOCPP[
 				if (!endTag && html4 && html4ModeCompatibleWithXhtml1Schemata
-						&& attributeName.IsCaseFolded())
+						&& attributeName.IsCaseFolded)
 				{
 					val = NewAsciiLowerCaseStringFromString(val);
 				}

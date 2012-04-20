@@ -37,7 +37,7 @@ namespace HtmlParserSharp
 	public class SimpleHtmlParser
 	{
 		private Tokenizer tokenizer;
-		private DOMTreeBuilder treeBuilder;
+		private DomTreeBuilder treeBuilder;
 
 		public XmlDocumentFragment ParseStringFragment(string str, string fragmentContext)
 		{
@@ -74,7 +74,7 @@ namespace HtmlParserSharp
 
 		private void Reset()
 		{
-			treeBuilder = new DOMTreeBuilder();
+			treeBuilder = new DomTreeBuilder();
 			tokenizer = new Tokenizer(treeBuilder, false);
 			treeBuilder.IsIgnoringComments = false;
 

@@ -420,7 +420,7 @@ namespace HtmlParserSharp.Core
 				idValue = value;
 			}
 
-			if (name.IsXmlns())
+			if (name.IsXmlns)
 			{
 				if (xmlnsNames.Length == xmlnsLength)
 				{
@@ -531,13 +531,13 @@ namespace HtmlParserSharp.Core
 			mode = AttributeName.SVG;
 		}
 
-		public HtmlAttributes CloneAttributes(/*Interner interner*/)
+		public HtmlAttributes CloneAttributes()
 		{
 			Debug.Assert((length == 0 && xmlnsLength == 0) || mode == 0 || mode == 3);
 			HtmlAttributes clone = new HtmlAttributes(0);
 			for (int i = 0; i < length; i++)
 			{
-				clone.AddAttribute(names[i].CloneAttributeName(/*interner*/), values[i]
+				clone.AddAttribute(names[i].CloneAttributeName(), values[i]
 					// [NOCPP[
 					   , XmlViolationPolicy.Allow
 					// ]NOCPP]
