@@ -926,7 +926,7 @@ namespace HtmlParserSharp.Core
 					AppendLongStrBuf(' ');
 					AppendLongStrBuf('-');
 					// FALLTHROUGH
-					goto case XmlViolationPolicy.AlterInfoset;
+					goto case XmlViolationPolicy.Allow;
 				case XmlViolationPolicy.Allow:
 					Warn("The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.");
 					// ]NOCPP]
