@@ -5,6 +5,7 @@ This is a manual C# port of the [Validator.nu HTML Parser](http://about.validato
 
 Status
 ------
+PLEASE SEE https://github.com/jamietre/HtmlParserSharp FOR AN ACTIVELY MAINTAINED VERSION OF THIS PROJECT.
 
 Currently the port is based on Validator.nu 1.3.1 and works, as far as I have tested it. However as there are no unit tests, I'm not sure if every detail is working correctly. Tests showed that it is quite fast (about 3-6 times slower than parsing XML using .NET's XDocument API, but I think XML parsing is easier to implement, so this is okay and it's still FAST).
 
